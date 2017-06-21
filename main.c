@@ -12,6 +12,8 @@ enum
     DESC_V,
     MOSTRA_C,
     MOSTRA_A,
+    EXPORTA,
+    IMPORTA,
     SAIR
 };
 
@@ -30,6 +32,8 @@ int main()
         printf ("[%d] - Desconectar vertices\n", DESC_V);
         printf ("[%d] - Mostrar conexoes de um vertice\n", MOSTRA_C);
         printf ("[%d] - Mostrar arranjos\n", MOSTRA_A);
+        printf ("[%d] - Exportar grafo\n",EXPORTA);
+        printf ("[%d] - Importar grafo\n",IMPORTA);
         printf ("[%d] - Sair\n", SAIR);
         printf ("Escolha: ");
         scanf ("%d", &esc);
@@ -52,7 +56,7 @@ int main()
             MostraVertcs (Li);
             system("pause");
             break;
-        /// A IMPLEMENTAR
+        ///OK
         case DESC_V:
             DesconectaVert(Li);
             break;
@@ -61,11 +65,20 @@ int main()
             MostraConexao (Li);
             system("pause");
             break;
-        /// A IMPLEMENTAR
+        ///OK
         case MOSTRA_A:
             MostraArranjos (Li);
             break;
+        ///IMPLEMENTAR
+        case EXPORTA:
+            ExportaGrafo(Li);
+            break;
+        ///IMPLEMENTAR
+        case IMPORTA:
+            ImportaGrafo(Li);
+            break;
         case SAIR:
+            Dest_Lista(Li);
             break;
         }
     }

@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1498030043 source:c:\users\arthur ydalgo\documents\trabalhos-utfpr\3ºperíodo\pcd\grafos_2\main.c
+1498084301 source:c:\users\arthur ydalgo\documents\trabalhos-utfpr\3ºperíodo\pcd\grafos_2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"ArtGrafos.h"
 
-1498028683 c:\users\arthur ydalgo\documents\trabalhos-utfpr\3ºperíodo\pcd\grafos_2\artgrafos.h
+1498086537 c:\users\arthur ydalgo\documents\trabalhos-utfpr\3ºperíodo\pcd\grafos_2\artgrafos.h
 
-1498028866 source:c:\users\arthur ydalgo\documents\trabalhos-utfpr\3ºperíodo\pcd\grafos_2\artgrafos.c
+1498086605 source:c:\users\arthur ydalgo\documents\trabalhos-utfpr\3ºperíodo\pcd\grafos_2\artgrafos.c
 	<stdio.h>
 	<stdlib.h>
 	<strings.h>
