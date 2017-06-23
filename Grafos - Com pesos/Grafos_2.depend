@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1498179222 source:c:\users\arthur ydalgo\documents\trabalhos-utfpr\3ºperíodo\pcd\grafos_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArtGrafos.h"
+
+1498172283 c:\users\arthur ydalgo\documents\trabalhos-utfpr\3ºperíodo\pcd\grafos_2\artgrafos.h
+
+1498179195 source:c:\users\arthur ydalgo\documents\trabalhos-utfpr\3ºperíodo\pcd\grafos_2\artgrafos.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"ArtGrafos.h"
+
+1498233445 source:c:\users\arthur ydalgo\documents\trabalhos-utfpr\3ºperíodo\pcd\grafos_2 - com pesos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"ArtGrafos.h"
+
+1498234967 c:\users\arthur ydalgo\documents\trabalhos-utfpr\3ºperíodo\pcd\grafos_2 - com pesos\artgrafos.h
+
+1498232291 source:c:\users\arthur ydalgo\documents\trabalhos-utfpr\3ºperíodo\pcd\grafos_2 - com pesos\artgrafos.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"ArtGrafos.h"
+

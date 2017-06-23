@@ -1,0 +1,32 @@
+vertices
+0 Assis
+@
+1 Toledo
+@
+2 Marechal
+@
+3 Foz
+@
+4 QuatroPontes
+@
+5 Cascavel
+@
+6 Maringa
+@
+7 Umuarama
+@
+8 Guarapuava
+@
+9 PontaGrossa
+@
+10 Palotina
+@
+11 CeuAzul
+conexoes
+0 40> 1
+1 30> 5
+1 40> 0
+1 40> 2
+2 40> 1
+5 30> 1
+-1 -1> -1
