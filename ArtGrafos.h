@@ -4,45 +4,83 @@
 typedef struct l_est l_est;
 typedef struct Vrtc Vrtc;
 
-///GRAFO
+/// ******************
+/// ******************
 
-typedef struct Vrtc{
-  int id;
-  char *str;
-  l_est *pathsIn, *pathsOut;
+      ///GRAFO
+
+/// ******************
+/// ******************
+
+///Estrutura vértice
+typedef struct Vrtc
+{
+    int id;
+    int check;
+    char *str;
+    l_est *pathsIn, *pathsOut;
 } Vrtc;
 
+///Criação e alocação
 Vrtc *AlocaVert();
-int CriarVertice(l_est *Li);
-int ConectaVertc(int idS,int idD,l_est *Li);
-void MostraVertcs(l_est *Li);
-void NovaConexao();
-void DeletarVertice(l_est *Li);
-void ReIdVertices(l_est *Li);
-void MostraConexao(l_est *Li);
-void MostraArranjos(l_est *Li);
-int MostrarArranjoRec(Vrtc*V);
-void ImprimiVrtc(Vrtc *V);
-void DesconectaVert(l_est *Li);
-void ExportaGrafo(l_est *Li);
-void ImportaGrafo(l_est *Li);
+int  CriarVertice (l_est *Li);
 
-///Lista
+///Menor caminho
+int  MenorCaminho (l_est *Li, int idI, int idF);
+int  MenorCaminhoRec (l_est *Li, Vrtc *V,int idF,int qnt);
 
-typedef struct l_est {
-  Vrtc **Vert;
-  int qtdElem, maxElem;
+///Utilitarias
+int  ConfereSobras (l_est *Li, Vrtc *V);
+int  ConexaoRepetida (int idO, int idI, l_est *Li);
+void ReIdVertices (l_est *Li);
+void MostraVertcs (l_est *Li);
+void ZeraChecks(l_est *Li);
+
+///Mostragem
+void MostraConexao (l_est *Li);
+void MostraArranjos (l_est *Li);
+void ImprimiVrtc (Vrtc *V);
+
+///Novas conexoes
+void NovaConexao(l_est *Li);
+int  ConectaVertc (int idS, int idD, l_est *Li);
+
+///Desconectar
+void DesconectaVert (l_est *Li);
+void DeletarVertice (l_est *Li);
+
+///Importar e exportar
+void ExportaGrafo (l_est *Li);
+void ImportaGrafo (l_est *Li);
+
+/// ******************
+/// ******************
+
+       ///Lista
+
+/// ******************
+/// ******************
+
+///Estrutura Lista
+typedef struct l_est
+{
+    Vrtc **Vert;
+    int qtdElem, maxElem;
 } l_est;
 
+///Criação e destruição
 l_est*  CriarLista ();
-int ConfereSobras(l_est *Li,Vrtc *V);
-l_est*  CriarLista_C ();
 int     Dest_Lista (l_est *Li);
+
+///Inserção
 int     InserirFim (l_est *Li, Vrtc *V);
-int     InserirInicio (l_est *Li, Vrtc *Dados);
-int     InserirPos (l_est *Li, Vrtc *Dados, int pos);
+
+///Remoção
 int     RemoverPos (l_est *Li, int pos);
-Vrtc *    BuscarPos (l_est *Li, int pos);
+int     RemoveTodos (l_est *Li);
+
+///Busca
+Vrtc *  BuscarPos (l_est *Li, int pos);
 int     BuscarDado (l_est *Li, Vrtc *Dados);
 
 #endif // ARTGRAFOS_H_INCLUDED

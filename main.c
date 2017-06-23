@@ -10,16 +10,19 @@ enum
     CONECTAR,
     MOSTRA_V,
     DESC_V,
+    MEN_CAM,
     MOSTRA_C,
     MOSTRA_A,
     EXPORTA,
     IMPORTA,
+    APAGA,
     SAIR
 };
 
 int main()
 {
     int esc = 1;
+    int check, idI, idF;
     l_est *Li = CriarLista();
     while (esc != SAIR)
     {
@@ -30,10 +33,12 @@ int main()
         printf ("[%d] - Conectar vertices\n", CONECTAR);
         printf ("[%d] - Mostrar vertices\n", MOSTRA_V);
         printf ("[%d] - Desconectar vertices\n", DESC_V);
+        printf ("[%d] - Menor caminho de um vertice a outro\n", MEN_CAM);
         printf ("[%d] - Mostrar conexoes de um vertice\n", MOSTRA_C);
         printf ("[%d] - Mostrar arranjos\n", MOSTRA_A);
-        printf ("[%d] - Exportar grafo\n",EXPORTA);
-        printf ("[%d] - Importar grafo\n",IMPORTA);
+        printf ("[%d] - Exportar grafo\n", EXPORTA);
+        printf ("[%d] - Importar grafo\n", IMPORTA);
+        printf ("[%d] - Apagar grafo\n", APAGA);
         printf ("[%d] - Sair\n", SAIR);
         printf ("Escolha: ");
         scanf ("%d", &esc);
@@ -43,42 +48,68 @@ int main()
         case CRIAR:
             CriarVertice (Li);
             break;
-        case DELETAR:
         ///OK
+        case DELETAR:
             DeletarVertice (Li);
             break;
-        case CONECTAR:
         ///OK
+        case CONECTAR:
             NovaConexao (Li);
             break;
-        case MOSTRA_V:
         ///OK
+        case MOSTRA_V:
+
             MostraVertcs (Li);
-            system("pause");
+            system ("pause");
             break;
         ///OK
         case DESC_V:
-            DesconectaVert(Li);
+            DesconectaVert (Li);
+            break;
+        ///OK
+        case MEN_CAM:
+            MostraVertcs (Li);
+            printf ("\nSelecione o ID de saida: ");
+            scanf("%d",&idI);
+            printf ("Selecione o ID de chegada: ");
+            scanf("%d",&idF);
+            check = MenorCaminho (Li, idI, idF);
+            if(check==0)
+            {
+                printf("Os dois vertices nao estao ligados\n");
+            }else if(check<0&&check!=-2)
+            {
+                printf("Nao tenho ideia do que aconteceu...\n");
+            }else if(check==-2){
+                printf("Nao ha vertices\n");
+            }else{
+                printf("Menor caminho: %d\n",check);
+            }
+            system("pause");
             break;
         ///OK
         case MOSTRA_C:
             MostraConexao (Li);
-            system("pause");
+            system ("pause");
             break;
         ///OK
         case MOSTRA_A:
             MostraArranjos (Li);
             break;
-        ///IMPLEMENTAR
+        ///OK
         case EXPORTA:
-            ExportaGrafo(Li);
+            ExportaGrafo (Li);
             break;
-        ///IMPLEMENTAR
+        ///OK
         case IMPORTA:
-            ImportaGrafo(Li);
+            ImportaGrafo (Li);
+            break;
+        ///OK
+        case APAGA:
+            RemoveTodos(Li);
             break;
         case SAIR:
-            Dest_Lista(Li);
+            Dest_Lista (Li);
             break;
         }
     }
