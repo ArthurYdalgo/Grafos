@@ -9,7 +9,7 @@
 ///*******************************************************************
 
 
-///LISTA
+///LISTA DE NÓS
 
 
 ///*******************************************************************
@@ -718,3 +718,65 @@ int MenorCaminhoRec (l_est *Li, Vrtc *V, int idI, int idF, int qnt)
         return 0;
     }
 }
+
+///CONEXOES CONDICIONAIS
+void Conexao_Por_Niveis(l_est*Li,int id,int nivel)
+{
+    Vrtc *V = BuscarPos(Li,id);
+    Conexao_Por_NiveisRec(V,0,nivel);
+}
+void Conexao_Por_NiveisRec(Vrtc *V, int nivel,int limite)
+{
+    if (nivel<limite&&V->check==0)
+    {
+        lig lAux;
+        int i;
+        for (i=0;i<V->pathsOut->qtdElem ; i++)
+        {
+            lAux = BuscarPosL(V->pathsOut,i);
+            if(lAux.Vprox->check==0)
+                printf("%d-%s -[%d]-> %d-%s\n",V->id,V->str,lAux.peso,lAux.Vprox->id,lAux.Vprox->str);
+        }
+        V->check=1;
+        for (i=0;i<V->pathsOut->qtdElem ; i++)
+        {
+            lAux = BuscarPosL(V->pathsOut,i);
+            Conexao_Por_NiveisRec(lAux.Vprox,nivel+1,limite);
+        }
+    }
+}
+
+void Conexao_Por_PesoLimite(l_est *Li, int id, int limite){
+    Vrtc *V = BuscarPos(Li,id);
+    Conexao_Por_PesoLimiteRec(V,0,limite);
+    ZeraChecks(Li);
+}
+void Conexao_Por_PesoLimiteRec(Vrtc *V,int p_total,int limite){
+    if(p_total<=limite&&V->check==0)
+    {
+        lig lAux;
+        int i;
+        for (i=0;i<V->pathsOut->qtdElem ;i++ )
+        {
+            lAux = BuscarPosL(V->pathsOut,i);
+            if(lAux.peso+p_total<=limite&&lAux.Vprox->check==0)
+            {
+                printf("%d-%s -[%d]-> %d-%s\n",V->id,V->str,lAux.peso,lAux.Vprox->id,lAux.Vprox->str);
+            }
+        }
+        V->check=1;
+        for (i=0;i<V->pathsOut->qtdElem ;i++ )
+        {
+            lAux = BuscarPosL(V->pathsOut,i);
+            Conexao_Por_PesoLimiteRec(lAux.Vprox,p_total+lAux.peso,limite);
+        }
+
+    }
+}
+
+
+
+
+
+
+//

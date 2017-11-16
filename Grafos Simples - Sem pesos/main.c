@@ -12,6 +12,7 @@ enum
     DESC_V,
     MEN_CAM,
     MOSTRA_C,
+    MOSTRA_C_niveis,
     MOSTRA_A,
     EXPORTA,
     IMPORTA,
@@ -22,7 +23,7 @@ enum
 int main()
 {
     int esc = 1;
-    int check, idI, idF;
+    int check, idI, idF,id,nivel;
     l_est *Li = CriarLista();
     while (esc != SAIR)
     {
@@ -35,6 +36,7 @@ int main()
         printf ("[%d] - Desconectar vertices\n", DESC_V);
         printf ("[%d] - Menor caminho de um vertice a outro\n", MEN_CAM);
         printf ("[%d] - Mostrar conexoes de um vertice\n", MOSTRA_C);
+        printf ("[%d] - Mostrar vertices conectados a vertice, com limite de nivel\n", MOSTRA_C_niveis);
         printf ("[%d] - Mostrar arranjos\n", MOSTRA_A);
         printf ("[%d] - Exportar grafo\n", EXPORTA);
         printf ("[%d] - Importar grafo\n", IMPORTA);
@@ -91,6 +93,15 @@ int main()
         case MOSTRA_C:
             MostraConexao (Li);
             system ("pause");
+            break;
+        case MOSTRA_C_niveis:
+            MostraVertcs(Li);
+            printf("Selecione um vertice (por ID):");
+            scanf("%d",&id);
+            printf("Selecione um nivel: ");
+            scanf("%d",&nivel);
+            Conexao_Por_Niveis(Li,id,nivel);
+            system("pause");
             break;
         ///OK
         case MOSTRA_A:

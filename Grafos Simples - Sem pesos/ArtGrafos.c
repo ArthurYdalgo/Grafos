@@ -68,7 +68,6 @@ int RemoveTodos (l_est *Li)
 {
     if (Li)
     {
-        int i;
         free (Li->Vert);
         Li->maxElem = 10;
         Li->qtdElem = 0;
@@ -594,4 +593,29 @@ int MenorCaminhoRec (l_est *Li, Vrtc *V, int idF, int qnt)
     }
 }
 
-
+///CONEXOES CONDICIONAIS
+void Conexao_Por_Niveis(l_est*Li,int id,int nivel)
+{
+    Vrtc *V = BuscarPos(Li,id);
+    Conexao_Por_NiveisRec(V,0,nivel);
+}
+void Conexao_Por_NiveisRec(Vrtc *V, int nivel,int limite)
+{
+    if (nivel<limite&&V->check==0)
+    {
+        Vrtc *vAux;
+        int i;
+        for (i=0;i<V->pathsOut->qtdElem ; i++)
+        {
+            vAux = BuscarPos(V->pathsOut,i);
+            if(vAux->check==0)
+                printf("%d-%s -> %d-%s\n",V->id,V->str,vAux->id,vAux->str);
+        }
+        V->check=1;
+        for (i=0;i<V->pathsOut->qtdElem ; i++)
+        {
+            vAux = BuscarPos(V->pathsOut,i);
+            Conexao_Por_NiveisRec(vAux,nivel+1,limite);
+        }
+    }
+}

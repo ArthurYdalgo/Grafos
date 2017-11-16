@@ -12,3 +12,16 @@
 	<strings.h>
 	"ArtGrafos.h"
 
+1510683692 source:c:\users\chuck\documents\github\grafos\grafos simples - sem pesos\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArtGrafos.h"
+
+1510682573 c:\users\chuck\documents\github\grafos\grafos simples - sem pesos\artgrafos.h
+
+1510683529 source:c:\users\chuck\documents\github\grafos\grafos simples - sem pesos\artgrafos.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"ArtGrafos.h"
+

@@ -29,6 +29,10 @@ int  CriarVertice (l_est *Li);
 int  MenorCaminho (l_est *Li, int idI, int idF);
 int  MenorCaminhoRec (l_est *Li, Vrtc *V,int idF,int qnt);
 
+///CONEXOES CONDICIONAIS
+void Conexao_Por_Niveis(l_est*Li,int id,int nivel);
+void Conexao_Por_NiveisRec(Vrtc *V, int nivel,int limite);
+
 ///Utilitarias
 int  ConfereSobras (l_est *Li, Vrtc *V);
 int  ConexaoRepetida (int idO, int idI, l_est *Li);

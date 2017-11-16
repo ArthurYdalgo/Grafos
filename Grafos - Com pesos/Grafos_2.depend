@@ -26,3 +26,17 @@
 	<strings.h>
 	"ArtGrafos.h"
 
+1510683329 source:c:\users\chuck\documents\github\grafos\grafos - com pesos\artgrafos.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"ArtGrafos.h"
+
+1510683419 c:\users\chuck\documents\github\grafos\grafos - com pesos\artgrafos.h
+
+1510681851 source:c:\users\chuck\documents\github\grafos\grafos - com pesos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"ArtGrafos.h"
+
